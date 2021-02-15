@@ -161,6 +161,13 @@ border-radius: 15px;
       margin-bottom: 20px;
       position: relative;
   }
+  .login-form .form-group span
+  {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+
 .login-form .form-control{
   min-height: 50px;
   border-radius: 2px; 
@@ -168,7 +175,7 @@ border-radius: 15px;
       background: rgba(255, 255, 255, 1);
       border: none; 
       border-radius: 5px;
-      padding: 0 20px 0 45px; 
+      padding: 0 20px 0 37px; 
       color: #000;
       outline-style: none;
 }
@@ -225,7 +232,22 @@ border-radius: 15px;
   position: absolute;
   z-index: 2;
   left: 15px;
-  top: 14px;
+  top: 20px;
   font-size: 20px;
   color: #000;
+}
+.loder
+{
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+  left: 0;
+  top: 0;
 }
