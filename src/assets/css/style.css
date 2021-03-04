@@ -1,315 +1,334 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  color: #000;
-  font-family: 'Poppins-Regular';
-  overflow-x: hidden;
+    color: #000;
+    font-family: 'Poppins-Regular';
+    overflow-x: hidden;
 }
 
 @font-face {
-  font-family: 'Poppins-Bold';
-  src: url('../fonts/Poppins-Bold.woff2') format('woff2'), 
-  url('../fonts/Poppins-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Poppins-Bold';
+    src: url('../fonts/Poppins-Bold.woff2') format('woff2'), url('../fonts/Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins-Regular';
-  src: url('../fonts/Poppins-Regular.woff2') format('woff2'), 
-  url('../fonts/Poppins-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.woff2') format('woff2'), url('../fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins-Medium';
-  src: url('../fonts/Poppins-Medium.woff2') format('woff2'), 
-  url('../fonts/Poppins-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Poppins-Medium';
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2'), url('../fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins-Italic';
-  src: url('../fonts/Poppins-Italic.woff2') format('woff2'), 
-  url('../fonts/Poppins-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Poppins-Italic';
+    src: url('../fonts/Poppins-Italic.woff2') format('woff2'), url('../fonts/Poppins-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Poppins-SemiBold';
-  src: url('../fonts/Poppins-SemiBold.woff2') format('woff2'), 
-  url('../fonts/Poppins-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'Poppins-SemiBold';
+    src: url('../fonts/Poppins-SemiBold.woff2') format('woff2'), url('../fonts/Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
 }
 
 a {
-  color: #ee1679;
-  transition: 0.5s;
-  outline-style: none;
+    color: #ee1679;
+    transition: 0.5s;
+    outline-style: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: #D4A31A;
-  outline: none;
-  text-decoration: none;
+    color: #D4A31A;
+    outline: none;
+    text-decoration: none;
 }
 
 p {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Poppins-Bold';
-  padding: 0;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins-Bold';
+    padding: 0;
+    margin: 0;
 }
 
 .container {
-  max-width: 1200px;
+    max-width: 1200px;
 }
 
 section {
-  display: block;
-  float: left;
-  width: 100%;
+    display: block;
+    float: left;
+    width: 100%;
 }
-.login_bg_section
-{
-  display: block;
-  float: left;
-  position: fixed;
-  background: #000;
-  width: 100%;
-  height: 100%;
-  z-index: 1; 
-  top: 0;
-  left: 0; 
+
+.login_bg_section {
+    display: block;
+    float: left;
+    position: fixed;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
-.login_bg
-{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  object-fit: cover;
-  object-position: top;
-  top: 0;
-  left: 0; 
+
+.login_bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+    object-position: top;
+    top: 0;
+    left: 0;
 }
 
 .login_container {
-  max-width: 500px;
-  width: 100%;
-  margin: 6em auto;
-  position: relative;
-  z-index: 2;
-  text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 6em auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
-.login_container .logo
-{
-  width: 100px;
+
+.login_container .logo {
+    width: 100px;
 }
-.logo_text
-{
-  font-family: 'Poppins-Regular';
-  font-size: 25px;
-  color: #fff; 
-  margin-top: 10px;
+
+.logo_text {
+    font-family: 'Poppins-Regular';
+    font-size: 25px;
+    color: #fff;
+    margin-top: 10px;
 }
-.logo_subtext
-{
-  font-family: 'Poppins-Regular';
-  font-size: 19px;
-  color: #fff; 
-  margin-bottom: 25px;
+
+.logo_subtext {
+    font-family: 'Poppins-Regular';
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 25px;
 }
 
 .form-control {
-  box-shadow: none;
-  border-color: #ddd;
+    box-shadow: none;
+    border-color: #ddd;
 }
+
 .form-control:focus {
-  border-color: #ff301e; 
+    border-color: #ff301e;
 }
 
-  .login-form form {
-      color: #fff; 
-      padding: 60px 30px;
-      background: radial-gradient(100% 100% at 0% 0%, #6D626A 0%, #121212 100%);
-
-margin: 15px;
-border-radius: 15px;
+.login-form form {
+    color: #fff;
+    padding: 60px 30px;
+    background: radial-gradient(100% 100% at 0% 0%, #6D626A 0%, #121212 100%);
+    margin: 15px;
+    border-radius: 15px;
 }
+
 .login-form h4 {
-  text-align: center;
-  font-size: 22px;
-      margin: 20px 0;
-      color: #fff;
+    text-align: center;
+    font-size: 22px;
+    margin: 20px 0;
+    color: #fff;
 }
 
-  .login-form .form-group {
-      margin-bottom: 20px;
-      position: relative;
-  }
-  .login-form .form-group span
-  {
+.login-form .form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.login-form .form-group span {
     display: inline-block;
     width: 100%;
     text-align: left;
-  }
+}
 
-.login-form .form-control{
-  min-height: 50px;
-  border-radius: 2px; 
-      transition: all 0.5s;
-      background: rgba(255, 255, 255, 1);
-      border: none; 
-      border-radius: 5px;
-      padding: 0 20px 0 37px; 
-      color: #000;
-      outline-style: none;
+.login-form .form-control {
+    min-height: 50px;
+    border-radius: 2px;
+    transition: all 0.5s;
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px 0 37px;
+    color: #000;
+    outline-style: none;
 }
+
 .login-form .btn {
-  min-height: 50px;
-  border-radius: 2px; 
-      transition: all 0.5s;
-      background: rgba(255, 255, 255, 0.15);
-      border: none; 
-      border-radius: 5px;
-      padding: 0 20px; 
-      color: #fff;
-      outline-style: none;
+    min-height: 50px;
+    border-radius: 2px;
+    transition: all 0.5s;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    color: #fff;
+    outline-style: none;
 }
-.login-form .form-control::placeholder
-{
-  color: #000;
+
+.login-form .form-control::placeholder {
+    color: #000;
 }
+
 .login-form .close {
-      position: absolute;
-  top: 15px;
-  right: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
+
 .login-form .btn {
-  background: #ff301e;
-  border: none;
-  line-height: normal;
+    background: #ff301e;
+    border: none;
+    line-height: normal;
 }
-.login-form .btn:hover, .login-form .btn:focus {
-  background: #fff;
-  color: #000;
+
+.login-form .btn:hover,
+.login-form .btn:focus {
+    background: #fff;
+    color: #000;
 }
+
 .login-form .checkbox-inline {
     float: left;
 }
+
 .login-form input[type="checkbox"] {
     margin-top: 2px;
 }
+
 .login-form .forgot-link {
     float: right;
 }
+
 .login-form .small {
     font-size: 13px;
 }
+
 .login-form a {
     color: #ff301e;
 }
-.form-control:focus {
 
-  box-shadow: 0px 0px 5px 0px #ff301e;
+.form-control:focus {
+    box-shadow: 0px 0px 5px 0px #ff301e;
 }
-.login_icon
-{
-  position: absolute;
-  z-index: 2;
-  left: 15px;
-  top: 20px;
-  font-size: 20px;
-  color: #000;
+
+.login_icon {
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 20px;
+    font-size: 20px;
+    color: #000;
 }
-.loder
-{
-  display: flex;
-  flex-wrap: wrap;
-  float: left;
-  width: 100%;
-  position: fixed;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 999;
-  left: 0;
-  top: 0;
+
+.loder {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 999;
+    left: 0;
+    top: 0;
 }
-.header-fixed .app-header
-{
-  background: rgba(51,31,33,1) !important;
-background: -moz-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51,31,33,1)), color-stop(100%, rgba(209,5,36,1))) !important;
-background: -webkit-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -o-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -ms-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: linear-gradient(to right, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#331f21', endColorstr='#d10524', GradientType=1 ) !important;
+
+.header-fixed .app-header {
+    background: rgba(51, 31, 33, 1) !important;
+    background: -moz-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51, 31, 33, 1)), color-stop(100%, rgba(209, 5, 36, 1))) !important;
+    background: -webkit-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -o-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -ms-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: linear-gradient(to right, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#331f21', endColorstr='#d10524', GradientType=1) !important;
 }
-.navbar-nav .nav-link
-{
-  color: #fff !important;
+
+.navbar-nav .nav-link {
+    color: #fff !important;
 }
+
 .app-header .navbar-toggler-icon {
-  height: 23px;
-  background: url(../images/menu.svg) no-repeat !important;
+    height: 23px;
+    background: url(../images/menu.svg) no-repeat !important;
 }
-button:focus
-{
-  outline: none !important;
+
+button:focus {
+    outline: none !important;
 }
+
 .sidebar .nav-link.active .nav-icon {
-  color: #fff !important;
+    color: #fff !important;
 }
+
 .sidebar .nav-link:hover {
-  background: rgba(51,31,33,1) !important;
-background: -moz-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51,31,33,1)), color-stop(100%, rgba(209,5,36,1))) !important;
-background: -webkit-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -o-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: -ms-linear-gradient(left, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-background: linear-gradient(to right, rgba(51,31,33,1) 0%, rgba(209,5,36,1) 100%) !important;
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#331f21', endColorstr='#d10524', GradientType=1 ) !important;
+    background: rgba(51, 31, 33, 1) !important;
+    background: -moz-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51, 31, 33, 1)), color-stop(100%, rgba(209, 5, 36, 1))) !important;
+    background: -webkit-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -o-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: -ms-linear-gradient(left, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    background: linear-gradient(to right, rgba(51, 31, 33, 1) 0%, rgba(209, 5, 36, 1) 100%) !important;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#331f21', endColorstr='#d10524', GradientType=1) !important;
 }
-.mat-calendar-body-disabled
-{
-  opacity: .2 !important;
+
+.mat-calendar-body-disabled {
+    opacity: .2 !important;
 }
-.mat-focus-indicator
-{
-  margin: 0 4px !important;
+
+.mat-focus-indicator {
+    margin: 0 4px !important;
 }
+
 .app-header {
-  border-bottom: 0 !important;
+    border-bottom: 0 !important;
 }
+
 .app-header {
-  height: 76px !important;
+    height: 68px !important;
 }
+
 .header-fixed .app-body {
-  margin-top: 76px !important;
+    margin-top: 68px !important;
 }
-.navbar-brand-full
-{
-  width: 80px !important;
-  height: 60px !important;
+
+.navbar-brand-full {
+    width: 60px !important;
+    height: 48px !important;
 }
-.app-header .nav-item .nav-link > .img-avatar, .app-header .nav-item .avatar.nav-link > img {
-  height: 50px !important;
-  margin: 0 10px;
+
+.app-header .nav-item .nav-link>.img-avatar,
+.app-header .nav-item .avatar.nav-link>img {
+    height: 40px !important;
+    margin: 0 10px;
 }
