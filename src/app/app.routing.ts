@@ -31,6 +31,11 @@ export const routes: Routes = [
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [AuthGuardService]
       },
+      {
+        path: 'country',
+        loadChildren: () => import('./views/country/country.module').then(m => m.CountryModule),
+        canActivate: [AuthGuardService]
+      }
     ]
   },
 ];
