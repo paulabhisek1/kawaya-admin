@@ -11,6 +11,11 @@ export const navItems: INavData[] = [
     url: '/country',
     icon: 'icon-flag',
   },
+  {
+    name: 'Genre',
+    url: '/genre',
+    icon: 'fa fa-list-alt',
+  },
   // {
   //   name: 'Notifications',
   //   url: '/notifications',

@@ -6,6 +6,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { CountryAddComponent } from './country-add/country-add.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SharedModule } from '../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CommonModule,
     CountryRoutingModule,
-    InfiniteScrollModule,
+    FormsModule,
     SharedModule
   ]
 })

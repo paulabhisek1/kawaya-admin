@@ -35,6 +35,11 @@ export const routes: Routes = [
         path: 'country',
         loadChildren: () => import('./views/country/country.module').then(m => m.CountryModule),
         canActivate: [AuthGuardService]
+      },
+      {
+        path: 'genre',
+        loadChildren: () => import('./views/genre/genre.module').then(m => m.GenreModule),
+        canActivate: [AuthGuardService]
       }
     ]
   },

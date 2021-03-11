@@ -4,17 +4,16 @@ import { CommonService } from '../../../core/services/Common/common.service';
 import { HelperService } from '../../../core/services/Helper/helper.service';
 
 @Component({
-  selector: 'app-country-list',
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.scss']
+  selector: 'app-genre-list',
+  templateUrl: './genre-list.component.html',
+  styleUrls: ['./genre-list.component.scss']
 })
-export class CountryListComponent implements OnInit {
-
+export class GenreListComponent implements OnInit {
   subscriptions: Subscription[] = [];
   page: number = 1;
   isLoading: boolean = false;
-  countryList = [];
-  totalCountry: number = 0;
+  genreList = [];
+  totalGenre: number = 0;
   search: string = '';
 
   constructor(
@@ -23,11 +22,11 @@ export class CountryListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.fetchCountryList(); // Fetching Country Listing
+    this.getGenreList(); // Fetch Genre List
   }
 
-  // Fetch Country Listing
-  fetchCountryList() {
+  // Fetch Genre List
+  getGenreList() {
     let requestConfig = {
       page: this.page,
       search: this.search
@@ -36,20 +35,20 @@ export class CountryListComponent implements OnInit {
     this.isLoading = true;
     this.subscriptions.push(
       this.commonService.getAPICall({
-        url: 'country-list',
+        url: 'genre-list',
         data: requestConfig
       }).subscribe((result)=>{
         this.isLoading = false;
         if(result.status == 200) {
           if(this.page == 1) {
-            this.countryList = [];
+            this.genreList = [];
           }
 
-          for(let item of result.data.country_list) {
-            this.countryList.push(item);
+          for(let item of result.data.genre_list) {
+            this.genreList.push(item);
           }
 
-          this.totalCountry = result.data.total_count;
+          this.totalGenre = result.data.total_count;
         }
         else{
           this.helperService.showError(result.msg);
@@ -61,42 +60,21 @@ export class CountryListComponent implements OnInit {
     )
   }
 
+  // Start Search
   startSearch() {
     if(this.search) {
       this.page = 1;
-      this.fetchCountryList();
+      this.getGenreList();
     }
   }
 
+  // Clear Search
   clearSearch() {
     if(this.search) {
       this.search = '';
       this.page = 1;
-      this.fetchCountryList();
+      this.getGenreList();
     }
-  }
-
-  // Status Change Country
-  statusChangeCountry(countryID) {
-    this.isLoading = true;
-    this.subscriptions.push(
-      this.commonService.putAPICall({
-        url: `country-status-change/${countryID}`
-      }).subscribe((result)=>{
-        this.isLoading = false;
-        if(result.status == 200) {
-          this.helperService.showSuccess(result.msg);
-          this.page = 1;
-          this.fetchCountryList();
-        }
-        else{
-          this.helperService.showError(result.msg);
-        }
-      },(err)=>{
-        this.isLoading = false;
-        this.helperService.showError(err.error.message);
-      })
-    )
   }
 
   // On Scroll Pagination
@@ -105,15 +83,9 @@ export class CountryListComponent implements OnInit {
       return
     }
 
-    if (this.totalCountry > this.countryList.length) {
+    if (this.totalGenre > this.genreList.length) {
       this.page++;
-      this.fetchCountryList()
-    }
-  }
-
-  ngOnDestroy() {
-    for (const sub of this.subscriptions) {
-      sub.unsubscribe();
+      this.getGenreList()
     }
   }
 

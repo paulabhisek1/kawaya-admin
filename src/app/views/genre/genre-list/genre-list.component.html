@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" [(ngModel)]="search" placeholder="Search Country...">
+                    <input type="text" class="form-control" name="search" [(ngModel)]="search" placeholder="Search Genre...">
                     <div class="input-group-append">
                         <button class="btn btn-primary" (click)="startSearch()" type="button">
                         <i class="fa fa-search"></i>
@@ -14,36 +14,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <button class="btn btn-danger"><i class="fa fa-plus fa-md"></i> Add Genre</button>
+            </div>
         </div>
         <br><br>
-        <div class="row" 
-            infiniteScroll
+        <div class="row" infiniteScroll
             [infiniteScrollDistance]="2"
             [infiniteScrollThrottle]="50"
             (scrolled)="onScroll()">
+
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Country Code</th>
-                        <th>Telephone Code</th>
-                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <ng-container *ngFor="let country of countryList; let i=index">
-                        <tr>
+                        <tr *ngFor="let genre of genreList; let i=index">
                             <td>{{ i+1 }}</td>
-                            <td>{{ country.name }}</td>
-                            <td>{{ country.country_code }}</td>
-                            <td>{{ country.telephone_code ? country.telephone_code : '---' }}</td>
+                            <td>{{ genre.name }}</td>
                             <td>
-                                <i style="cursor: pointer;" (click)="statusChangeCountry(country.id)" *ngIf="country.is_active == 1" class="fa fa-toggle-on fa-lg"></i>
-                                <i style="cursor: pointer;" (click)="statusChangeCountry(country.id)" *ngIf="country.is_active == 0" class="fa fa-toggle-off fa-lg"></i>
+                                <i style="cursor: pointer;" class="fa fa-trash fa-lg"></i>
                             </td>
                         </tr>
-                    </ng-container>
                 </tbody>
             </table>
         </div>
