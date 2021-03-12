@@ -5,7 +5,7 @@ import { GenreRoutingModule } from './genre-routing.module';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { GenreAddComponent } from './genre-add/genre-add.component';
 import { SharedModule } from '../../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     GenreRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class GenreModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../../../core/services/Common/common.service';
 import { HelperService } from '../../../core/services/Helper/helper.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-country-list',
@@ -56,24 +57,42 @@ export class CountryListComponent implements OnInit {
         }
       },(err)=>{
         this.isLoading = false;
-        this.helperService.showError(err.error.message);
+        this.helperService.showError(err.error.msg);
       })
     )
   }
 
+  // Start Search
   startSearch() {
-    if(this.search) {
+    if((this.search && this.search.length >= 3) || (this.search === '')) {
       this.page = 1;
       this.fetchCountryList();
     }
   }
 
+  // Clear Search
   clearSearch() {
     if(this.search) {
       this.search = '';
       this.page = 1;
       this.fetchCountryList();
     }
+  }
+
+  // Open Status Change Confirmation
+  openConfirmation(countryID) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to change status of this country ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        this.statusChangeCountry(countryID)
+      } 
+    })
   }
 
   // Status Change Country
@@ -94,7 +113,7 @@ export class CountryListComponent implements OnInit {
         }
       },(err)=>{
         this.isLoading = false;
-        this.helperService.showError(err.error.message);
+        this.helperService.showError(err.error.msg);
       })
     )
   }

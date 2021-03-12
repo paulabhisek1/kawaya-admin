@@ -1,1 +1,27 @@
-<p>genre-add works!</p>
+<div class="animated fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <span><h3>Add Genre</h3></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="addForm" autocomplete="off" (ngSubmit)="addGenre()">
+                    <div class="form-group">
+                        <label for="genreName">Genre Name</label>
+                        <input type="text" class="form-control" id="genreName" placeholder="Enter Genre Name..." formControlName="name">
+                        <mat-error *ngIf="formSubmitted && f.name.errors">
+                            <div *ngIf="f.name.errors.required || f.name.errors.nospace">*Please enter genre name</div>
+                        </mat-error>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- LOADER -->
+    <div *ngIf="isLoading" class="loder">
+        <img src="assets/images/loader.gif" alt="loader" />  
+    </div>
+</div>

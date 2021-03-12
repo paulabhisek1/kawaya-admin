@@ -3,11 +3,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" [(ngModel)]="search" placeholder="Search Country...">
+                    <input type="text" class="form-control" (input)="startSearch()" name="search" [(ngModel)]="search" placeholder="Search Country...">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" (click)="startSearch()" type="button">
-                        <i class="fa fa-search"></i>
-                        </button>
                         <button (click)="clearSearch()" class="btn btn-danger" type="button">
                         <i class="fa fa-times"></i>
                         </button>
@@ -39,8 +36,8 @@
                             <td>{{ country.country_code }}</td>
                             <td>{{ country.telephone_code ? country.telephone_code : '---' }}</td>
                             <td>
-                                <i style="cursor: pointer;" (click)="statusChangeCountry(country.id)" *ngIf="country.is_active == 1" class="fa fa-toggle-on fa-lg"></i>
-                                <i style="cursor: pointer;" (click)="statusChangeCountry(country.id)" *ngIf="country.is_active == 0" class="fa fa-toggle-off fa-lg"></i>
+                                <i style="cursor: pointer;" (click)="openConfirmation(country.id)" *ngIf="country.is_active == 1" class="fa fa-toggle-on fa-lg"></i>
+                                <i style="cursor: pointer;" (click)="openConfirmation(country.id)" *ngIf="country.is_active == 0" class="fa fa-toggle-off fa-lg"></i>
                             </td>
                         </tr>
                     </ng-container>

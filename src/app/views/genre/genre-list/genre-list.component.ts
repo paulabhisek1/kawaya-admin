@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../../../core/services/Common/common.service';
 import { HelperService } from '../../../core/services/Helper/helper.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-genre-list',
@@ -55,14 +56,14 @@ export class GenreListComponent implements OnInit {
         }
       },(err)=>{
         this.isLoading = false;
-        this.helperService.showError(err.error.message);
+        this.helperService.showError(err.error.msg);
       })
     )
   }
 
   // Start Search
   startSearch() {
-    if(this.search) {
+    if((this.search && this.search.length >= 3) || (this.search === '')) {
       this.page = 1;
       this.getGenreList();
     }
@@ -89,4 +90,51 @@ export class GenreListComponent implements OnInit {
     }
   }
 
+  // Open Delete Confirmation
+  openDeleteConfirmation(genreID) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to delete this genre ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        this.deleteGenre(genreID)
+      } 
+    })
+  }
+
+  // Delete Genre API Call
+  deleteGenre(genreID) {
+    this.isLoading = true;
+    this.subscriptions.push(
+      this.commonService.deleteAPICall({
+        url: `delete-genre/${genreID}`,
+      }).subscribe((result)=>{
+        this.isLoading = false;
+        if(result.status == 200) {
+          this.helperService.showSuccess(result.msg);
+          this.page = 1;
+          this.search = '';
+          this.getGenreList();
+        }
+        else{
+          this.helperService.showError(result.msg);
+        }
+      },(err)=>{
+        this.isLoading = false;
+        this.helperService.showError(err.error.msg);
+      })
+    )
+  }
+
+  ngOnDestroy() {
+    for(let sub of this.subscriptions) {
+      if(sub) {
+        sub.unsubscribe();
+      }
+    }
+  }
 }
